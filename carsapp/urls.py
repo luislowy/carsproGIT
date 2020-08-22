@@ -6,7 +6,7 @@ from django.core.validators import URLValidator
 from django.core.exceptions import ValidationError
 
 urlpatterns=[
-path('', vista_inicio, name='vista_inicio')
+path('', vista_inicio, name='vista_inicio'),
 path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
 path('api/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 path('agregar_persona/', login_required (vista_agregar_persona), name= 'vista_agregar_persona'),
