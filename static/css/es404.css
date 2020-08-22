@@ -1,0 +1,97 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+#ti {
+  position: relative;
+  height: 100vh;
+  background-color: #151514;
+}
+#ti .ti {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.ti {
+  max-width: 460px;
+  width: 100%;
+  text-align: center;
+  line-height: 1.4;
+}
+.ti .ti404 {
+  height: 158px;
+  line-height: 153px;
+}
+.ti .ti404 h1 {
+  
+  color: #151514;
+  font-size: 220px;
+  letter-spacing: 10px;
+  margin: 0px;
+  font-weight: 700;
+  text-shadow: 2px 2px 0px #EB0928, -2px -2px 0px #EB0928;
+}
+.ti .ti404 h1>span {
+  text-shadow: 2px 2px 0px #5567D9, -2px -2px 0px #5567D9, 0px 0px 8px #5567D9;
+}
+.ti .ti500 {
+  height: 158px;
+  line-height: 153px;
+}
+.ti .ti500 h1 {
+  
+  color: #151514;
+  font-size: 220px;
+  letter-spacing: 10px;
+  margin: 0px;
+  font-weight: 700;
+  text-shadow: 10px 2px 0px #EB0928, -2px -2px 0px #EB0928;
+}
+.ti .ti500 h1>span {
+  text-shadow: 10px 2px 0px #5567D9, -2px -2px 0px #5567D9, 0px 0px 8px #5567D9;
+}
+
+.ti .ti400 {
+  height: 158px;
+  line-height: 153px;
+}
+.ti .ti400 h1 {
+  
+  color: #151514;
+  font-size: 220px;
+  letter-spacing: 10px;
+  margin: 0px;
+  font-weight: 700;
+  text-shadow: 10px 2px 0px #EB0928, -2px -2px 0px #EB0928;
+}
+.ti .ti400 h1>span {
+  text-shadow: 10px 2px 0px #5567D9, -2px -2px 0px #5567D9, 0px 0px 8px #5567D9;
+}
+.ti .ti403 {
+  height: 158px;
+  line-height: 153px;
+}
+.ti .ti403 h1 {
+  
+  color: #151514;
+  font-size: 220px;
+  letter-spacing: 10px;
+  margin: 0px;
+  font-weight: 700;
+  text-shadow: 10px 2px 0px #EB0928, -2px -2px 0px #EB0928;
+}
+.ti .ti403 h1>span {
+  text-shadow: 10px 2px 0px #5567D9, -2px -2px 0px #5567D9, 0px 0px 8px #5567D9;
+}
+.ti p {
+  color: #EBEDF3;
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: 0px;
+  margin-bottom: 15px;
+}
+
+

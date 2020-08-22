@@ -1,0 +1,163 @@
+.conteni{
+	height: 100vh;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-image: url("../ima/desca4.jpg");
+}
+
+.sombra{
+	position: absolute;
+    left: 50%;
+    top: 50%;
+    -ms-transform:translate(-50%, -50%);
+    -webkit-transform:translate(-50%, 50%);
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    width: 80%
+    height:20%;
+    text-align: center;
+    background-color: rgba(0,0,0,0.7);
+    color: #fff;
+    margin: auto;
+}
+
+.sombra hr{
+	border-top:1px solid #fff;
+}
+.sombra h1{
+	font-size: 8vw;
+	margin-bottom: 10px; 
+}
+
+.sombra p{
+	font-size: 4vw;
+	margin-bottom: 10px; 
+}
+.contelink{
+	margin: 15px;
+	position: relative;
+}
+.contelink a{
+	display: inline-block;
+	color: #fff;
+	text-decoration: none;
+	border: 1px solid #fff;
+	padding: 1px;
+	margin-bottom: 5px;
+	width: 150px
+}
+.contelink a:hover{
+	background-color: #fff;
+	color: #111;
+}
+.estbar{
+	background-color: rgba(255,255,255,0.7) !important;
+}
+.estbar div, .estbar ul{
+	background-color:transparent !important; 
+}
+
+
+
+.con{
+	font-size: 5vw;
+}
+/* ---------------------bueno--------------------------------------------*/
+
+.sombra_label{
+	font-size: 2vw;
+	margin-bottom: 10px; 
+	padding:15px; 
+}
+/* --------------------------  login bueno*/
+.parra{
+	padding: 4px;
+	background-color: rgb(75, 57, 110, 0.3);
+}
+.parra_h3{
+
+font-size: 2vw;
+margin-bottom: 10px;
+}
+
+
+
+body {
+  height: 100%;
+}
+.form-signin {
+  width: 100%;
+  max-width: 420px;
+  padding: 17px;
+  margin: auto;
+}
+.form-signin button{
+    margin-bottom: 5px;
+	width: 100px;
+
+/*	width: 50%
+	max-width: 20px;
+	padding: 2px;
+	margin: auto;*/
+
+}
+.principal{
+	width: 900px;
+	height: auto; overflow: hidden;
+	border: 0px solid #000;
+	margin: auto;
+
+}
+.formulario{
+	width: 432px;
+	height: auto;
+	overflow: hidden;
+	border: 1px solid #ccc;
+	padding: 5px;
+	float: left
+}
+
+/*--------------------------------------------------------------------contacto----------------*/
+.sombra1{
+	position: absolute;
+    left: 50%;
+    top: 60%;
+    -ms-transform:translate(-50%, -50%);
+    -webkit-transform:translate(-50%, 50%);
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    width: 70%
+    height:20%;
+    text-align: center;
+    background-color: rgba(1,70,100,0.5);
+    color: #fff;
+    margin: auto;
+}
+.sombra1 hr{
+	border-top:2px solid #fff;
+}
+.parra1{
+	font-size: 3vw;
+	margin-bottom: 10px;
+}
+
+
+.sombra2{
+	position: absolute;
+    left: 50%;
+    top: 50%;
+    right: 20%;
+    -ms-transform:translate(-50%, -50%);
+    -webkit-transform:translate(-50%, 50%);
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    width: 70%
+    height:20%;
+    text-align: center;
+    background-color: rgba(15,10,100,0.7);
+    color: #fff;
+    margin: auto;
+}
+

@@ -1,0 +1,66 @@
+.textobien {
+  position: absolute;
+  font: normal 100% Arial;
+  left: 0;
+  top: 250px;
+  right: 0;
+  /*color: #000000*/
+
+
+ 
+}
+.centr{
+    width: 100%;
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+}
+
+.imag {
+  background: url(../ima/mon.jpg) no-repeat center center;
+  width: 100%;
+  padding: 20px 10px 60px 10px;
+  height: 100vh;
+  overflow: hidden;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+.textos {
+  
+  width: 100%;
+  padding: 20px 10px 60px 10px;
+  height: 100vh;
+  overflow: hidden;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+.logo{
+  background: url(../ima/a.jpg) no-repeat center center;
+  width: 100%;
+  padding: 20px 10px 60px 10px;
+  height: 100vh;
+  overflow: hidden;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+
+}
