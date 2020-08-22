@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'i3+*_db1b8kz+&ntcde1y!#gc3$%!_(l*#5mm$lb2-nwzmqmc6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'carsapp',
     'rest_framework',
+    'firebase_admin',
+    'gunicorn',
+    'psycopg2',
 ]
 
 MIDDLEWARE = [
@@ -77,12 +80,13 @@ WSGI_APPLICATION = 'carspro.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'carsprojectDB',
-        'USER':'root',
-        'PASSWORD': '',
-        'HOST': '127.0.0.1',
-        'PORT':'3306',
+        #'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'dcnuioini71qk0',
+        'USER':'bxpyhbqcuqiqtc',
+        'PASSWORD': 'e434e220cc323f17709de2c8168167d3f0cb9fb626609c2c489abfb1ad175b6a',
+        'HOST': 'ec2-34-230-149-169.compute-1.amazonaws.com',
+        'PORT':'5432',
     }
 }
 
@@ -131,4 +135,11 @@ REST_FRAMEWORK = {
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'car/static')
 STATIC_URL = '/static/'
+STATICFILES_DIRS=[
+os.path.join(BASE_DIR,'static'),]
+
+
+MEDIA_ROOT = 'media'
+MEDIA_URL = '/media/'
