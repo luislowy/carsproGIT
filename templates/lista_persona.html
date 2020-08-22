@@ -1,0 +1,49 @@
+{% extends 'basenav.html'  %}
+{% block titulo %}
+
+{% endblock %}
+{% block contenido %}
+ 
+	    <div>
+		<table class="table table-striped col-sm col-md col-lg">
+		       	
+        </div>
+		<thead>
+			<tr>
+				<th scope="col">id</th>
+				<th scope="col">nombre</th>
+				<th scope="col">apellido</th>
+				<th scope="col">identificacion</th>
+				<!--<th scope="col">email</th>-->
+				<th scope="col">telefono</th>
+				<th scope="col">direccion</th>
+				<th scope="col">pregunta de seguridad</th>
+				<th scope="col">respuesta</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for p in lista%}
+				<tr>
+					<td>{{p.id}}</td>
+					<td>{{p.nombre}}</td>
+					<td>{{p.apellidos}}</td>
+					<td>{{p.identificacion}}</td>
+					<!--<td>{{p.email}}</td>-->
+					<td>{{p.telefono}}</td>
+					<td>{{p.direccion}}</td>
+					<td>{{p.preguntasegu}}</td>
+					<td>{{p.respuesta}}</td>
+					<td> <a class="btn btn-primary"  href="{% url 'vista_eliminar_persona' id_Persona=p.id%}" disabled> eliminar registro</a> 
+						
+					<span class="spinner-grow spinner-w-sm" role="status" aria-hidden="true"></span>
+					<span class="sr-only">lo....</span>
+					</td>
+					<span><button type="button" id="btn-one" class="btn btn-primary">CREAR REGISTRAR</button></span>
+
+				</tr>
+			{% endfor%}
+		</tbody>
+
+	    </table>
+	    </div>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1 , shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title id ="ti">contactanos</title>
+	<link href="/static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="/static/css/sporta.css" rel="stylesheet" type="text/css">
+</head>
+<body class="">
+  <header>
+        <div class="col-sm col-md col-lg">
+        <nav aria-label="breadcrumb ">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item active">
+                    <a href="{% url 'vista_inicio' %}">Home</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">Contacto</li>
+            </ol>
+        </nav>
+    </div>
+  </header>
+
+
+  <section class="container card col-sm col-md col-lg sombra1" style="width: 20rem;">
+      <h4>Envianos un mensaje</h4>
+      <hr/>
+    <form method="POST" action="" class="">
+
+        {% csrf_token %}
+        {{ formulario.as_p }}
+        <div class="text-center">
+        <input type="submit" value="Enviar">
+        </div>
+        
+          <!-- <p class="parra1">
+              Email: carsafe@gmsil.com <br>
+              Telefono: 6467123 <br>
+              WhatsApp: 3124562344 <br>
+           </p>-->
+        
+    </form>
+    
+    </section>
+  <!--  <section class="container card col-sm col-md col-lg sombra2" style="width: 18rem;">
+      <p>
+        email: carsafe@gmsil.com
+        telefono: 6467123
+        WhatsApp: 3124562344
+      </p>
+      
+    </section>-->
+  <script src="/static/js/jquery.js"></script>
+  <script src="/static/js/bootstrap.js"></script>
+</body>
+</html>

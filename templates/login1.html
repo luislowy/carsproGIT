@@ -1,0 +1,39 @@
+{% extends 'base.html'  %}
+{% block titulo%}
+    login
+{% endblock %}
+{% block contenido %}
+    <div class="container col-sm col-md col-lg ">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item active">
+                    <a href="{% url 'vista_inicio' %}">Home</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">Login</li>
+            </ol>
+        </nav>
+    </div>
+
+    <div class="sombra">        
+            <form action="" method="POST" class="container">
+                <div>
+                    <a href="{% url 'vista_confirmar_user' %}">REGISTRATE AQUI</a>
+                </div>
+                {% csrf_token %}
+                <div>
+                    <label for="usuario" >Usuario</label>
+                    {{formulario.usuario}}
+                </div>
+                <div>
+                    <label for="clave">Contraseña</label>
+                    {{formulario.clave}}
+                </div>
+                 <h4>{{ msj }}</h4>
+                <div class="col-sm col-md col-lg text-center">
+                <input type="submit" value="Login">
+                <button type="submit" class="btn-primary btn-sm">login</button>
+                </div>
+            </form>
+    </div>        
+   
+{% endblock %}

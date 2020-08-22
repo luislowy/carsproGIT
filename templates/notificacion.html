@@ -1,0 +1,29 @@
+{% load static%}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 , shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Notificaciones</title>
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/static/css/myestilo.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/static/css/sporta.css">
+</head>
+<body>
+
+<section class="container card col-sm col-md col-lg sombra1" style="width: 20rem;">
+
+	
+	<form method="POST" action="">
+			{% csrf_token %}
+			{{formulario.as_p}}
+			
+	</form>	
+</section> 
+
+  <script src="/static/js/jquery.js"></script>
+  <script src="/static/js/bootstrap.js"></script>  
+
+</body>
+</html>
