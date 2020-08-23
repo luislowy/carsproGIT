@@ -28,7 +28,7 @@ path('inicio_superuser/',login_required (vista_inicio_superuser), name='inicio_s
 path('tokenRfirebase/', tokenRfirebase, name='tokenRfirebase'),
 path('resibir_info_controlador/',resibir_info_controlador, name='resibir_info_controlador'),
 path('liberar/token/', liberar_token, name='liberar_token'),
-path('solodata/', solodata, name='solodata')
+path('solodata/', solodata, name='solodata'),
 
 
 ]

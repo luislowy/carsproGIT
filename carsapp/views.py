@@ -224,43 +224,6 @@ def resibir_info_controlador(request):
 
 
 #------------------funcion para saber a que usuario enviar la notificacion---------------
-@csrf_exempt
-def solodata(request):
-	if request.method=='POST':
-		idalar=request.POST.get('serie')
-		notu=request.POST.get('noty')
-
-		if notu=='movimiento':
-			ca=Carro.objects.get(idalarma=idalar)
-			print(ca.persona.usuario.id)
-			to=Tokenfirebase.objects.get(usuario=ca.persona.usuario.id)
-			tokenre=to.token
-			movo=request.POST.get('gps')
-			print(tokenre)
-			print(notu)
-			envio_data(tokenre, notu, movo)
-
-def envio_data(tokenre, notu, movo):
-	if not firebase_admin._apps:
-		cred = credentials.Certificate("static/carsafa-uni-firebase-adminsdk-ut950-f4f7d12592.json")
-		firebase_admin.initialize_app(cred)
-		if movo is not None:
-			indice = movo.find(',')
-			latitud = movo[:indice]
-			longitud = movo[indice +1:]
-			datas={
-				'serie':idalar,
-				'tiponoti':notu, 
-				'latitud':latitud, 
-				'longitud':longitud
-			}
-	message = messaging.Message(
-		data=datas,
-		token=tokenre,
-	)			
-	response = messaging.send(message)
-	print('Successfully sent message:', response)
-	return HttpResponse(' ')		
 
 
 # -----------------------inicio para envio de notificacion----------------------------------
@@ -333,7 +296,7 @@ def envio_notificacionsingps(tokenre, notu):
 
 	
 @csrf_exempt
-def solodataTEM(request):
+def solodata(request):
 	server_key = 'AAAAhi_wSHU:APA91bH867I6QndLUr5RC6ZV5aIj720f4vRIak_l_zMde6vYdEDBicCbeeOzVWp6PBppAbAQAHBSu4ZfNIquSVUXmgP84fGs1asWkvxlcKA4iSaYBLuo8A--lNx1hDlGEvOqcfx5EbMs'
 	
 	tokenapp="cV5yiNqfQ5uggdLlfN9HNt:APA91bEndlNJJkRKiEH-ARcZE-BBnnK2RQF0WGQbBjFih6pmER5baDzTEt1NzqXraAXr3BEZukKGXbUdSRYuasyE4jGPjx83yl_Dve_w38yBTE07yWk7SehnKkPPNbuaRD7RTwRsWGV_"
@@ -363,7 +326,7 @@ def solodataTEM(request):
 		else:		
 			datas={'tiponoti':notu}			
 		if not firebase_admin._apps:
-			cred = credentials.Certificate('static/carsafa-uni-firebase-adminsdk-ut950-f4f7d12592.json')
+			cred = credentials.Certificate("static/carsafa-uni-firebase-adminsdk-ut950-f4f7d12592.json")
 			firebase_admin.initialize_app(cred)
 		
 		message = messaging.Message(
