@@ -325,7 +325,7 @@ def solodata(request):
 		else:		
 			datas={'tiponoti':notu}			
 		if not firebase_admin._apps:
-			cred = credentials.Certificate('C:/Users/USUARIO/Desktop/TRABAJOpts/carros/carsafa-uni-firebase-adminsdk-ut950-f4f7d12592.json')
+			cred = credentials.Certificate('static/carsafa-uni-firebase-adminsdk-ut950-f4f7d12592.json')
 			firebase_admin.initialize_app(cred)
 		
 		message = messaging.Message(
