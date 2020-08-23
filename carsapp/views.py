@@ -78,7 +78,7 @@ def vista_login(request):
 			else:
 				ban = True
 				msj= "usuario o clave incorrecta"
-				return redirect('/accounts/login/')
+				
 	formulario= login_form()
 	return render(request, 'login.html',locals())
 
