@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 class agregar_persona_form(forms.ModelForm):
 	class Meta:
 		model=Persona
-		fields='__all__'
+		exclude = ['usuario']
 
 class agregar_carro_form(forms.ModelForm):
 	class Meta:
