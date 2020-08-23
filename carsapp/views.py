@@ -260,7 +260,7 @@ def envio_data(tokenre, notu, movo):
 	)			
 	response = messaging.send(message)
 	print('Successfully sent message:', response)
-		
+	return HttpResponse('sappo')		
 
 
 # -----------------------inicio para envio de notificacion----------------------------------
