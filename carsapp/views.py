@@ -299,15 +299,7 @@ def envio_notificacionsingps(tokenre, notu):
 def solodata(request):
 	server_key = 'AAAAhi_wSHU:APA91bH867I6QndLUr5RC6ZV5aIj720f4vRIak_l_zMde6vYdEDBicCbeeOzVWp6PBppAbAQAHBSu4ZfNIquSVUXmgP84fGs1asWkvxlcKA4iSaYBLuo8A--lNx1hDlGEvOqcfx5EbMs'
 	
-	tokenapp="cV5yiNqfQ5uggdLlfN9HNt:APA91bEndlNJJkRKiEH-ARcZE-BBnnK2RQF0WGQbBjFih6pmER5baDzTEt1NzqXraAXr3BEZukKGXbUdSRYuasyE4jGPjx83yl_Dve_w38yBTE07yWk7SehnKkPPNbuaRD7RTwRsWGV_"
-	token_emu="dZMTCY5TQNCucoYJDEj183:APA91bGeVdEZ3MoBrG6TIsYePthD5fCaJAXr4CiTZQCXVQxQHWyq9zVjNuj2yV2JfiElsbHoyq6cVCGMiLakDEo8fq31tCdfpAQK4FrbKBeRdGMlKOenPp3o2MKCXZ8_a2c9KycHIKwZ"
-	reg_id = "d-6ujEWLRX-O6bS3wmx6Im:APA91bGLiXqoQEVwSWq1fjh1yxZGpAam5b6Mm7T009CwF81Uq8IzSOb0ERLZtyJhLS2gzm2OL2Mm6aDJn_8BiVQxsuaSjMncpOIcQgP9luBSs9YkVz6XVErsj_USRu8qFvqJ5D6ohB3v"
-	tokenoreo="ctqZRBo2S2-LLtgMhvmLJv:APA91bGkIqvmWS_8gdAuLysist_8n4XwlzSFLZ1x0gTogXWIiiRy946L6gnHFq_SmU8TbrFsvzCt-woHn3kVl1A5s_PdnIj3umhe9kwF7nm_YzO9k_ktdhaGzTrlmfjJqEIRDalKYXgg"
-	token6tf="cSAuE8SWSqS7RTbyR4BTIY:APA91bH8RtNEQVfV0d9H55m_8VQVqydjwxRAkRHwIi5m0a9ed_-f7JR2wWunl7X-TIEV2hKS5a_HJniL6SgH9yot8xKmwXO-wXYogxlxIYkjWxNnACiOD0iFeKgDB7A7y4Abbo1qRMsw"
-	tokenoreo2="dNToyE_-S1WbedBOw-pzAI:APA91bHsRM8CGX9hZ4M9L8isZ3y0S9EZGfB0EoHJCpX6xRbOb2zAfE43t8OOtJl7AP80T7fO96FyBSTBJ2zxhIY0mOsaLb8ZqcwCDsFwtxMzt5s2UeMsrICM_9Bun2J8UMv4aYEgkCpA"
-	token2="dTOmJayjSnWEYruvSWOkcj:APA91bHz1vcqifaQezgHgcPMcClJ_OaIbwrOjWC_5TuPirOyxNTIMUP7bfrn8S1QXF5l5oWPtQ02q72lG7cN6UePdw8NoLzqXysEhCTyeI0JX7x2LXss3Pa3Pg52O-tz7TPwrW0YITjt"
-	tokenfinal="f847aMr-R_mHoTw4HwAVcJ:APA91bHoYIbhrlo3TeQc2tMVqn8GY_gTxnrSvra5DW2fWsz46vSsJdn_zANygT_wT6566gFHoWn0VdIV5ZipUM8-387ZUyvex2W8JeyRJrko6CWECd1sAM0MrUf-x0iHw5pPhjFtVNEC"
-	token1="dArapP2ZRcWyNyrdQQV6c7:APA91bHBsY5vf_uRCXVhDlU2YIo8JG16rrvKf9Z_5Rzv5JjlYMlU0Z_sMxk8RByacYBgtmr37ExaSvJCv8RdhEtau3tCDjsnvx49OOtITqCTfo3R0gpJ_KCu4DFOYhjsLPw_NeEg-lvR"
+	token1="f847aMr-R_mHoTw4HwAVcJ:APA91bHoYIbhrlo3TeQc2tMVqn8GY_gTxnrSvra5DW2fWsz46vSsJdn_zANygT_wT6566gFHoWn0VdIV5ZipUM8-387ZUyvex2W8JeyRJrko6CWECd1sAM0MrUf-x0iHw5pPhjFtVNEC"
 	if request.method=='POST':
 		idalar=request.POST.get('serie')
 		notu=request.POST.get('noty')
@@ -329,10 +321,10 @@ def solodata(request):
 			cred = credentials.Certificate("static/carsafa-uni-firebase-adminsdk-ut950-f4f7d12592.json")
 			firebase_admin.initialize_app(cred)
 		
-		message = messaging.Message(
-		    data=datas,
-		    token=tokenfinal,
-		)
+	message = messaging.Message(
+		data=datas,
+		token=token1,
+	)
 	response = messaging.send(message)
 	print('Successfully sent message:', response)
 	return HttpResponse('sappo')
