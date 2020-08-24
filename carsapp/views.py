@@ -198,29 +198,60 @@ def resibir_info_controlador(request):
 			print(ca.persona.usuario.id)
 			to=Tokenfirebase.objects.get(usuario=ca.persona.usuario.id)
 			tokenre=to.token
-			posi=None
 			print(tokenre)
 			print(notu)
-			envio_notificacionsingps(tokenre, notu)
-			'''	userr=User.objects.get(relacion=ca.id)
-			tokefir=Tokenfirebase.objects.get(relacion=userr.id)'''
+			noti_env(tokenre, notu)
+	
 		elif idalar is not None and notu is not None and notu=='movimiento':
-			gp=request.POST.get('gps')
+			movo=request.POST.get('gps')
 			ca=Carro.objects.get(idalarma=idalar)
 			print(ca.persona.usuario.id)
 			to=Tokenfirebase.objects.get(usuario=ca.persona.usuario.id)
 			tokenre=to.token
+			if movo is not None:
+				indice = movo.find(',')
+				latitud = movo[:indice]
+				longitud = movo[indice +1:]
 			print(tokenre)
 			print(notu)
-			print(gp)
-			envio_notificacion(tokenre, notu, gp)
-		
-
-			
-
+			noti_envGSP(tokenre, notu, latitud, longitud, idalar)
+	
 	else:
 		print("sapo")
 	return HttpResponse('es nulo')
+
+def noti_env(tokenre, notu):
+	datas={'tiponoti':notu}
+	print("entro en funcion")
+	if not firebase_admin._apps:
+		cred = credentials.Certificate("static/carsafa-uni-firebase-adminsdk-ut950-1df4e12195.json")
+		firebase_admin.initialize_app(cred)
+	message = messaging.Message(
+		data=datas,
+		token=tokenre,
+	)
+	response = messaging.send(message)
+	print('Successfully sent message:', response)
+	return HttpResponse('sappo')
+		
+def noti_envGSP(tokenre, notu, latitud, longitud, idalar):
+	datas={
+		'serie':idalar,
+		'tiponoti':notu, 
+		'latitud':latitud, 
+		'longitud':longitud,
+	}
+	print("entro en funcion GGGGGPPPPSSS")
+	if not firebase_admin._apps:
+		cred = credentials.Certificate("static/carsafa-uni-firebase-adminsdk-ut950-1df4e12195.json")
+		firebase_admin.initialize_app(cred)
+	message = messaging.Message(
+		data=datas,
+		token=tokenre,
+	)
+	response = messaging.send(message)
+	print('Successfully sent message:', response)
+	return HttpResponse('sappo')
 
 
 #------------------funcion para saber a que usuario enviar la notificacion---------------
