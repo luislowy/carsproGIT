@@ -51,7 +51,7 @@
 	   function nose(id){
 	  	console.log('nose');
 	  	/*var urlba='eliminar_persona';*/
-	  	var u='https://carsafelowydavo.herokuapp.com/eliminar_carro/'
+	  	var u='https://carsafelowydavo.herokuapp.com/eliminar_carro/';
 	  	var id_Carro=id;
 	  	/*window.href = urlba+'/'+id_Persona;*/
 	  	$.ajax({
@@ -93,6 +93,7 @@
 			  confirmButtonText: 'Aceptar'
 				}).then((result) => {
 			  if (result.value) {
+
 			   nose(id);
 			   
 			  }
