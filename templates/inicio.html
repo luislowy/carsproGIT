@@ -12,12 +12,13 @@
 </head>
 	<body>
 
-
 		<nav class="navbar navbar-expand-lg navbar-dark col-sm col-md col-lg" style="background-color: #2962ff;" width="20">
 		        <a class="navbar-brand" href="{% url 'vista_inicio'%}" style="color: #ffff"> 
 		        <!--<span> <img src="/static/ima/a.jpg" width="250" height="40" alt=""> </span>-->
 		        <h2>CARSAFE</h2> 
 		        </a>
+		        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		          <span class="navbar-toggler-icon"></span>
 		        </button>
 		        <div class="collapse navbar-collapse" id="navbarNav">
 		          <ul class="navbar-nav ml-auto">
@@ -44,7 +45,7 @@
 		             <hr/>
 		            <p>ALARMA PARA VEHICULOS</p>
 		            <hr/>
-		            <div class="contelink text-center" >
+		           <-- <div class="contelink text-center" >
 		                <a href="">uno</a>
 		                <a href="">dos</a>
 		                <a href="">tres</a>
@@ -61,8 +62,110 @@
 				    
 		    </section>
     </section>
+    <div class="site-section ">
+      
+      <div class="container overlap-section">
+        <div class="row">
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+            <a class="unit-1 text-center">
+             
+              <img src="/static/ima/map.png" alt="Image" class="img-fluid"> 
+              <div class="unit-1-text">
+                <h3 class="unit-1-heading">Rastreo GPS</h3>
+                <p>Tendra la oportunidad de saber la posicion de su vehiculo en caso de robo.</p>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+            <a class="unit-1 text-center">
+              <img src="/static/ima/iot.png" alt="Image" class="img-fluid">
+              <div class="unit-1-text">
+                <h3 class="unit-1-heading">Tecnologia IoT</h3>
+                <p>Resibirá notificaciones sin importar la distancia a la que se encuentre de su carro.</p>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+            <a class="unit-1 text-center">
+              <img src="/static/ima/notificacion.png" alt="Image" class="img-fluid">
+              <div class="unit-1-text">
+                <h3 class="unit-1-heading">Control a Distancia</h3>
+                <p>Se utiliza su telefono para el control del del sistema CARSAFE instalado en el carro, puedes apagra el carro con solo un boton.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    
+    </div>
+
+
+<!-- Footer -->
+<footer class="page-footer font-small unique-color-dark"style="background-color: #535C75;">
+
+  <div style="background-color: #535C75;">
+    <div class="container">
+
+      <!-- Grid row-->
+      <div class="row py-4 d-flex align-items-center">
+      	<br>
+      </div>
+  </div>
+
+  <!-- Footer Links -->
+  <div class="container text-center text-md-left mt-5">
+
+    <!-- Grid row -->
+    <div class="row mt-3">
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+
+        <!-- Content -->
+        <h6 class="text-uppercase font-weight-bold">Carsafe</h6>
+        <hr class="har">
+        <p>Es una empresa caucana que se dedica a la seguridad de su carro.</p>
+
+      </div>
+         <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+        <!-- Links -->
+        <h6 class="font-weight-bold text-center">CONTACTO</h6> <!-- poner en mayusculas un texto  "text-uppercase"-->
+        <!--<hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">-->
+        <hr class="har">
+        <p>
+          <img src="/static/ico/casa.png">: calle 46N#12-8</p>
+        <p>
+          <img src="/static/ico/correo.png">: carsafe.contacto@casafe.com</p>
+        <p>
+          <img src="/static/ico/tel20.png">: 318457892</p>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+
+</footer>
+<!-- Footer -->
+		
+
 
     <script src="/static/js/jquery.js"></script>
     <script src="/static/js/bootstrap.js"></script>
+
 	</body>
+	    <!-- iconos tomados de-->
+    <!-- satelite.png  https://www.iconfinder.com/iconsets/space-exploration-set -->
+    <!--posicion.png  https://www.iconfinder.com/iconsets/navigation-and-mapping-1-->
+    <!--celu.png   httpswww.iconfinder.comiconsetscomputing-technology-->
+    <!-- carro.png  https://www.iconfinder.com/iconsets/adventure-outline-1
+    	wifi   https://www.iconfinder.com/iconsets/computing-technology
+    	carrocolor https://www.iconfinder.com/iconsets/transport-3-11
+    	celwifi https://www.iconfinder.com/iconsets/computing-technology
+    	camioneta  https://www.iconfinder.com/iconsets/cars-01-1
+
+    -->
 </html>
