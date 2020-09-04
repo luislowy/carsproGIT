@@ -1,16 +1,63 @@
 {% extends 'basenav.html'%}
+{%load static%} 
 {% block titulo%}
 
 {% endblock %}
 
 {%block contenido%}
-<section class="card text-center col-sm col-md col-lg">
 
-	<h2>AGREGAR PERSONA</h2>
-	<form action="" method="POST" enctype="multipart/form-data">
+<section class="conteniAGRE">
+	<h2 class="text-center" style="color: white">AGREGAR PERSONA</h2>
+	<form action="" method="POST" id="idform">
 	{% csrf_token%}
-	{{formulario.as_p}}
-	<input type="submit" value="Agregar Persona">		
+	<!--{{formulario.as_p}}-->
+	
+		<section class="sombraAGRE">	
+		      	 <div class="form-row text-center">
+					 <div class="form-group col-md-6">
+				    	<label for="id_nombre">Nombre</label>
+				    	{{formulario.nombre}}
+				     </div>
+				      <div class="form-group col-md-6">
+				    	<label for="id_apellido">Apellido</label>
+				    	{{formulario.apellido}}
+				     </div>
+
+				     <div class="form-group col-md-6">
+				    	<label for="id_identificacion">Identificacion</label>
+				    	{{formulario.identificacion}}
+				     </div>
+					 <div class="form-group col-md-6">
+				    	<label for="id_telefono">Telefono</label>
+				    	{{formulario.telefono}}
+				    </div>
+				     <div class="form-group col-md-6">
+				    	<label for="id_direccion">Direccion</label>
+				    	{{formulario.direccion}}
+				    </div>
+				    <div class="form-group col-md-6">
+				    	<label for="id_preguntasegu">Pregunta de seguridad</label>
+				        {{formulario.preguntasegu}}
+				    </div>
+				    <div class="form-group col-md-6">
+				    	<label  for="id_respuesta">Respuesta</label>
+				        {{formulario.respuesta}}
+				    </div>
+				    <br/>
+				    <p class="form-group col-md-6">
+				    	TODOS LOS CAMPOS SON OBLIGATORIOS</p>
+				    
+				    
+				 </div>
+			    <hr/>
+			    <input type="submit" class="btn btn-primary col-md-2" value="Agregar Persona" id="btn-dos">
+			   </div>	
+		</section> 	
+	
 	</form>	
-</section>
+</section>	
+	{% block javascript%}
+		<script src="{% static "js/s.js" %}"></script>
+
+	{% endblock javascript%}
 {% endblock %}	

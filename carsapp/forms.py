@@ -12,6 +12,20 @@ class agregar_carro_form(forms.ModelForm):
 	class Meta:
 		model=Carro
 		fields='__all__'
+		'''	modelo=forms.CharField(widget= forms.TextInput())
+		ciudad=forms.CharField(widget=forms.TextInput())
+		marca=forms.CharField(widget= forms.TextInput())
+		placa=forms.CharField(widget=forms.TextInput())
+		idalarma=forms.CharField(widget= forms.TextInput())
+		persona=forms.ModelChoiceField(queryset=Persona.objects.all())'''
+		widgets = {
+			'modelo':forms.TextInput(attrs={'class':'form-control '}),
+			'ciudad':forms.TextInput(attrs={'class':'form-control'}),
+			'marca':forms.TextInput(attrs={'class':'form-control'}),
+			'placa' :forms.TextInput(attrs={'class':'form-control'}),
+			'idalarma':forms.TextInput(attrs={'class':'form-control'}),
+			'persona' : forms.Select(attrs={'class':'js-example-basic-single form-control'})
+		}
 
 class confirmar_user_form(forms.Form):
 	identificacion=forms.CharField(widget= forms.TextInput(attrs={'tipe': 'number','placeholder':'Identificacion'}))

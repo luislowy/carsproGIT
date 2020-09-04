@@ -1,4 +1,5 @@
 {% extends 'basenav.html'  %}
+{% load static %}
 {% block titulo %}
 
 {% endblock %}
@@ -7,8 +8,7 @@
 	    <div>
 		<table class="table table-striped col-sm col-md col-lg">
 		<div class ="text-center">
-        	<a class="btn btn-primary" href="{% url 'vista_agregar_persona' %}" id="btn-dos">Crear Registro Persona
-        	</a>
+        	<h3>LISTA CARROS</h3>
         	
         </div>
 		<thead>
@@ -28,17 +28,79 @@
 					<td>{{p.ciudad}}</td>
 					<td>{{p.marca}}</td>
 					<td>{{p.placa}}</td>
-					<td> <a class="btn btn-primary"  href="{% url 'vista_eliminar_carro' id_Carro=p.id%}" disabled> eliminar registro</a> 
+					<td> 
+						<!--<a class="btn btn-primary btn-one" href="{% url 'vista_eliminar_carro' id_Carro=p.id%}" disabled> eliminar registro</a> 
 						
 					<span class="spinner-grow spinner-w-sm" role="status" aria-hidden="true"></span>
-					<span class="sr-only">lo....</span>
+					<span class="sr-only">lo....</span>-->
+					<button class="btn btn-primary" onclick="borrar_usu({{p.id}})"> eliminar registro</button> 
 					</td>
-					<span><button type="button" id="btn-one" class="btn btn-primary">CREAR REGISTRAR</button></span>
+					
 
 				</tr>
 			{% endfor%}
+			<!--<span><button type="button" id="btn-one" class="btn btn-primary">CREAR REGISTRAR</button></span>-->
 		</tbody>
 
 	    </table>
 	    </div>
+	   {% block javascript%}
+	   <script src="{% static "js/sweetalert2@9.js" %}"></script>
+	   <script type="text/javascript">
+
+	   function nose(id){
+	  	console.log('nose');
+	  	/*var urlba='eliminar_persona';*/
+	  	var u='http://localhost:8000/eliminar_carro/'
+	  	var id_Carro=id;
+	  	/*window.href = urlba+'/'+id_Persona;*/
+	  	$.ajax({
+		url: u+id_Carro,
+		success: function(respuesta) {
+			console.log('respuesta ok');
+
+			 Swal.fire(
+			      'Registro Eliminado!',
+			      'Con Exito.',
+			      'success'
+			     
+			).then((confirm)=>{
+				if(confirm.value==true)
+				window.location.reload();
+
+			});
+
+			
+			
+		},
+		error: function() {
+	        console.log("No se ha podido obtener la información");
+	    }
+	    
+		});
+
+	   }	
+	  function borrar_usu(id) 
+	  	{ 
+	  		console.log('consola'+id);
+	  		Swal.fire({
+			  title: 'Estas seguro?',
+			  text: "Quieres eliminar el registro " + id,
+			  icon: 'warning',
+			  showCancelButton: true,
+			  confirmButtonColor: '#3085d6',
+			  cancelButtonColor: '#d33',
+			  confirmButtonText: 'Aceptar'
+				}).then((result) => {
+			  if (result.value) {
+			   nose(id);
+			   
+			  }
+			  else{
+
+			  }
+			});
+	  	}
+	  </script>
+      {% endblock %}
 {% endblock %}
