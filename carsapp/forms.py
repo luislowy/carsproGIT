@@ -6,7 +6,16 @@ from django.contrib.auth.models import User
 class agregar_persona_form(forms.ModelForm):
 	class Meta:
 		model=Persona
-		exclude = ['usuario']
+		fields='__all__'
+		widgets = {
+			'nombre':forms.TextInput(attrs={'class':'form-control'}),
+			'apellido':forms.TextInput(attrs={'class':'form-control'}),
+			'identificacion':forms.TextInput(attrs={'class':'form-control'}),
+			'telefono' :forms.TextInput(attrs={'class':'form-control'}),
+			'direccion':forms.TextInput(attrs={'class':'form-control'}),
+			'preguntasegu' : forms.TextInput(attrs={'class':'form-control '}),
+			'respuesta': forms.TextInput(attrs={'class':'form-control '})
+		}
 
 class agregar_carro_form(forms.ModelForm):
 	class Meta:
