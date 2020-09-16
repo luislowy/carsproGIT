@@ -8,6 +8,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
 import requests
 import datetime
+import json
 
 
 # Create your views here.
@@ -193,9 +194,9 @@ def resibir_info_controlador(request):
 	if request.method=='POST':
 		idalar=request.POST.get('serie')
 		notu=request.POST.get('noty')
-		device=request.POST.get('device')
-		datasigfox=request.POST.get('data') #agregado ultimo
-		print('informacion de sigfox', datasigfox)
+		obtenerdatosbody=json.loads(request.body)
+		print('los datos enviados de sigfox',obtenerdatosbody['data'])
+
 
 		if idalar is not None and notu is not None and notu!='movimiento':
 			ca=Carro.objects.get(idalarma=idalar)
