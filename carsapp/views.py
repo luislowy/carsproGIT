@@ -194,7 +194,7 @@ def resibir_info_controlador(request):
 		idalar=request.POST.get('serie')
 		notu=request.POST.get('noty')
 		datasigfox=request.POST.get('data')
-		print('informacion de sigfox', datasigfox)
+		print('informacion de sigfox {}'.format(datasigfox))
 
 		if idalar is not None and notu is not None and notu!='movimiento':
 			ca=Carro.objects.get(idalarma=idalar)
