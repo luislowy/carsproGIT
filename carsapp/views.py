@@ -78,6 +78,7 @@ def vista_login(request):
 			else:
 				ban = True
 				msj= "usuario o clave incorrecta"
+				print("pendejo no estas metido DDDDDDDDDDDDD")
 				
 	formulario= login_form()
 	return render(request, 'login.html',locals())
