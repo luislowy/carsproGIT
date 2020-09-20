@@ -189,7 +189,7 @@ def tokenRfirebase(request):
 # fin para el registro del token del dispositivo
 #------------------funcion para saber a que usuario enviar la notificacion---------------
 @csrf_exempt
-def resibir_info_controlador(request):
+def resibir_info_controladores(request):
 
 	if request.method=='POST':
 		idalar=request.POST.get('serie')
@@ -364,6 +364,89 @@ def solodata(request):
 	response = messaging.send(message)
 	print('Successfully sent message:', response)
 	return HttpResponse('sappo')
+
+@csrf_exempt
+def resibir_info_controlador(request):
+	import json
+	if request.method=='POST':
+		a =json.loads(request.body)
+		if len(a):
+			print(a['device'])
+			idalar=a['device']
+			infsigfox=a['data']
+			ca=Carro.objects.get(idalarma=idalar)
+			print(ca.persona.usuario.id)
+			to=Tokenfirebase.objects.get(usuario=ca.persona.usuario.id)
+			tokenre=to.token
+			print(tokenre)
+			datas={}
+			infor= sacar_latitud_longitud(infsigfox);
+			notu=infor['tiponoty']
+			latitud=str(infor['latitud'])
+			longitud=str(infor['longitud'])
+			print(latitud, notu, longitud)
+
+			if notu=='movimiento':
+					
+				datas={
+					'serie':idalar,
+					'tiponoti':notu, 
+					'latitud':latitud, 
+					'longitud':longitud,
+				}
+			elif notu!='movimiento':	
+				datas={'tiponoti':notu}
+
+		if not firebase_admin._apps:
+			cred = credentials.Certificate("static/carsafa-uni-firebase-adminsdk-ut950-1df4e12195.json")
+			firebase_admin.initialize_app(cred)	
+		message = messaging.Message(
+			data=datas,
+			token=tokenre,
+		)
+		response = messaging.send(message)
+		print('Successfully sent message:', response)
+		print(datas)
+		return HttpResponse('pendejo')	
+
+def sacar_latitud_longitud(infsigfox):
+	print(len(infsigfox))
+	if len(infsigfox)>2:
+		print('si')
+		#infsigfox1=infsigfox.startswith('cc')# busca si la cadena inicia en cc
+		#if 'mm' in infsigfox:# busca si la cadena termina en mm
+		noty='movimiento'
+		#print('si esta')
+		#tem=infsigfox.replace('mm', '')
+		if 'cc'in infsigfox and 'aa'in infsigfox:
+			xx=tem.replace('cc', ' -').replace('aa' , ' ').split(' ')
+		elif 'cc' in infsigfox:	
+			xx=tem.replace('cc', ' -').split(' ')
+		else:	
+			xx=tem.replace('aa', ' ').split(' ')
+
+		print(xx)
+		if '' in xx:
+			sdd=xx.remove('')
+			print('borro la posicion cero', xx)
+		
+		lat=xx[0]
+		lon=xx[1]
+		lat=int(lat)/1000000
+		lon=int(lon)/1000000
+			
+		info={
+			'tiponoty':noty,
+			'latitud':lat,
+			'longitud':lon,
+		
+		}
+	else:
+		info={'tiponoty':'adentro',}
+		print('no')
+
+	print(info)
+	return info
 
 # -----------------------fin para envio de notificacion----------------------------------
 
