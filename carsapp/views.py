@@ -445,7 +445,7 @@ def sacar_latitud_longitud(infsigfox):
 		info={'tiponoty':'adentro',}
 		print('no')
 
-	print("informacion concatenada "info)
+	print("informacion concatenada ",info)
 	return info
 
 # -----------------------fin para envio de notificacion----------------------------------
