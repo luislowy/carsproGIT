@@ -414,10 +414,10 @@ def sacar_latitud_longitud(infsigfox):
 	if len(infsigfox)>2:
 		print('si longitud es mayor a2')
 		#infsigfox1=infsigfox.startswith('cc')# busca si la cadena inicia en cc
-		#if 'mm' in infsigfox:# busca si la cadena termina en mm
-		noty='movimiento'
-		#print('si esta')
-		#tem=infsigfox.replace('mm', '')
+		if 'bb' in infsigfox:# busca si la cadena termina en mm
+			noty='movimiento'
+			print('si esta')
+			tem=infsigfox.replace('bb', '')
 		if 'cc'in infsigfox and 'aa'in infsigfox:
 			xx=tem.replace('cc', ' -').replace('aa' , ' ').split(' ')
 		elif 'cc' in infsigfox:	
