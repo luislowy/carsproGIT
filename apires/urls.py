@@ -5,6 +5,7 @@ from django.urls import path
 from .userView import *
 
 urlpatterns = [
+	#path('user/loginres/', vista_login_API.as_view(), name="login"),
     path('user/login/', vista_login_API.as_view(), name="login"),
     path('user/historia/', vista_historia_API.as_view(), name="historia"),
   
