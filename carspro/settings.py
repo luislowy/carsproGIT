@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'firebase_admin',
     'gunicorn',
     'psycopg2',
+    'apires',
 ]
 
 MIDDLEWARE = [
