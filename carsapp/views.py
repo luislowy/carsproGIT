@@ -411,7 +411,7 @@ def resibir_info_controlador(request):
 
 def sacar_latitud_longitud(infsigfox):
 	print(len(infsigfox))
-	if len(infsigfox)>2:
+	if len(infsigfox)>3:
 		print('si longitud es mayor a2')
 		#infsigfox1=infsigfox.startswith('cc')# busca si la cadena inicia en cc
 		if 'bb' in infsigfox:# busca si la cadena termina en mm
