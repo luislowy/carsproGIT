@@ -382,11 +382,10 @@ def resibir_info_controlador(request):
 			datas={}
 			infor= sacar_latitud_longitud(infsigfox);
 			notu=infor['tiponoty']
-			latitud=str(infor['latitud'])
-			longitud=str(infor['longitud'])
-			print(latitud, notu, longitud)
-
 			if notu=='movimiento':
+				latitud=str(infor['latitud'])
+				longitud=str(infor['longitud'])
+				print(latitud, notu, longitud)
 					
 				datas={
 					'serie':idalar,
